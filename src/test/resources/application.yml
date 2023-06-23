@@ -1,0 +1,8 @@
+remote-task-manager:
+  processToManage:
+    "apex":
+      processName: "r5apex.exe"
+    "dota":
+      processName: "dota2.exe"
+    "lol":
+      processName: "lol.exe"

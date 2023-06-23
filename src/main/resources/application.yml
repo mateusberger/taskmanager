@@ -1,0 +1,52 @@
+remote-task-manager:
+
+  processToManage:
+
+    -
+      nickname: "discord"
+      processName: "Discord.exe"
+      groups:
+        - "communications"
+
+    -
+      nickname: "apex"
+      processName: "r5apex.exe"
+      groups:
+        - "games"
+
+    -
+      nickname: "dota"
+      processName: "dota2.exe"
+      groups:
+        - "games"
+
+
+  directories:
+
+    "games":
+      - 'D:\Epic Games\'
+      - 'D:\SteamLibrary\steamapps\common'
+
+
+scheduler:
+
+  scheduled:
+
+    "fecharGames":
+      cronExp: "0 */1 11-13,15-20 * * MON-FRI"
+      action: KILL
+      group: "games"
+
+
+security:
+
+  apiToken: "848a0eac-0d52-11ee-be56-0242ac120002"
+
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
